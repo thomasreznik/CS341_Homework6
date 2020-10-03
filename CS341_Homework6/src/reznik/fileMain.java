@@ -131,8 +131,8 @@ public class fileMain {
 							
 						}
 						fr.close();
-						System.out.println("Number of total lines in the Files: " + totallinecount); // Print the line count
-						System.out.println("Number of lines with Comments: " + countcomments); //Print number of lines of code with comments
+						System.out.println("Number of total lines in the file: " + totallinecount); // Print the line count
+						System.out.println("Number of lines with comments: " + countcomments); //Print number of lines of code with comments
 						System.out.println("Number of blank lines: " + countblanklines); //Print number of lines of code with comments
 						finallinecount = totallinecount - countcomments - countblanklines;
 						System.out.println("Number of lines of code without comments and blank lines: " + finallinecount);
