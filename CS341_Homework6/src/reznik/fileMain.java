@@ -101,21 +101,27 @@ public class fileMain {
 						{
 							s = s.replaceAll("\\s+", "");
 							totallinecount++; // For each line increment linecount by one
+							
+							//Counts for loops
 							if(s.contains("for(") || s.contains("for (")) {
 								countfor++;
 							}
+							//Counts if statements
 							if(s.contains("if(") || s.contains("if (")) {
 								countif++;
 							}
+							//Counts while loops
 							if(s.contains("while(") || s.contains("while (")) {
 								countwhile++;
 							}
+							//Counts blank lines
 							if(s.equals("")) {
 								countblanklines++;
 							}
-							
+							//Counts regular comments
 							if ((s.length() >= 2) && (s.startsWith("//"))) {
 								countcomments++;
+							//Counts block comments
 							} else if (s.contains("/*")) {
 								countcomments++;
 								while (((s = br.readLine()) != null) && !(s.endsWith("*/"))) {
@@ -133,10 +139,11 @@ public class fileMain {
 						fr.close();
 						System.out.println("Number of total lines in the file: " + totallinecount); // Print the line count
 						System.out.println("Number of lines with comments: " + countcomments); //Print number of lines of code with comments
-						System.out.println("Number of blank lines: " + countblanklines); //Print number of lines of code with comments
+						System.out.println("Number of blank lines: " + countblanklines); //Print number of lines of code that are blank
 						finallinecount = totallinecount - countcomments - countblanklines;
 						System.out.println("Number of lines of code without comments and blank lines: " + finallinecount);
-						System.out.println("Number of for loops: " + countfor);
+						System.out.println();
+						System.out.println("Number of for loops: " + countfor); 
 						System.out.println("Number of if statements: " + countif);
 						System.out.println("Number of while loops: " + countwhile);
 					}
